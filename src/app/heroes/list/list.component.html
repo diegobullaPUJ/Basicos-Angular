@@ -1,0 +1,25 @@
+<p>Listado de Héroes</p>
+
+ <div *ngIf="deletedHero !== ''; else noBorrado"> <!--directiva estructural -->
+    <h3>Héroe borrado: <small> {{ deletedHero }}</small></h3>
+</div>
+
+
+
+ <ng-template #noBorrado>  <!--con el # si el ngif de arriba es falso mostrara el ng-template  -->
+    <h3>No ha borrado nada.</h3>
+</ng-template>
+
+
+
+<button (click)="deleteHero()">
+    Borrar
+</button>
+
+
+<ul>
+     <li *ngFor="let hero of heroes, let i = index ">
+        {{ i }} {{ hero }}
+     </li> <!--directiva estructural -->
+</ul>
+
